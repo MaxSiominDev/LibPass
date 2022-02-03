@@ -1,0 +1,34 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <PreferenceCategory app:title="Libpass" >
+
+        <Preference
+            android:title=""
+            android:key="@string/key_get_libpass" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/info" >
+
+        <Preference
+            android:title="@string/help_and_feedback"
+            android:key="@string/key_help_and_feedback" />
+
+        <Preference
+            android:title="@string/share_this_app"
+            android:key="@string/key_share_this_app" />
+
+        <Preference
+            android:title="@string/more_apps"
+            android:key="@string/key_more_apps" />
+
+        <Preference
+            android:key="@string/key_app_version"
+            android:selectable="false"
+            tools:summary="current version" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

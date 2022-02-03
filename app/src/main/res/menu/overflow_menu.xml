@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/my_libpasses"
+        android:title="@string/my_libpasses" />
+
+    <item android:id="@+id/info"
+        android:title="@string/info" />
+
+    <item android:id="@+id/settings"
+        android:title="@string/settings" />
+
+    <item android:id="@+id/export"
+        android:title="@string/export" />
+
+    <item android:id="@+id/import_fragment"
+        android:title="@string/import_string" />
+
+</menu>

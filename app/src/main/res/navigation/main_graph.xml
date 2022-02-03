@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/libpassFragment">
+
+    <fragment
+        android:id="@+id/libpassFragment"
+        android:name="dev.maxsiomin.libpass.fragments.libpass.LibpassFragment"
+        android:label="LibpassFragment" >
+
+        <action
+            android:id="@+id/action_libpassFragment_to_addFragment"
+            app:destination="@id/addFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="dev.maxsiomin.libpass.fragments.settings.SettingsFragment"
+        android:label="SettingsFragment" />
+
+    <fragment
+        android:id="@+id/addFragment"
+        android:name="dev.maxsiomin.libpass.fragments.add.AddFragment"
+        android:label="AddFragment" >
+        <action
+            android:id="@+id/action_addFragment_to_enterManuallyFragment"
+            app:destination="@id/enterManuallyFragment" />
+        <action
+            android:id="@+id/action_addFragment_to_confirmFragment"
+            app:destination="@id/confirmFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/enterManuallyFragment"
+        android:name="dev.maxsiomin.libpass.fragments.entermanually.EnterManuallyFragment"
+        android:label="EnterManuallyFragment" >
+        <action
+            android:id="@+id/action_enterManuallyFragment_to_confirmFragment"
+            app:destination="@id/confirmFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmFragment"
+        android:name="dev.maxsiomin.libpass.fragments.confirm.ConfirmFragment"
+        android:label="ConfirmFragment" >
+        <argument
+            android:name="libpassId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_confirmFragment_to_enterAliasFragment"
+            app:destination="@id/enterAliasFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/enterAliasFragment"
+        android:name="dev.maxsiomin.libpass.fragments.enteralias.EnterAliasFragment"
+        android:label="enterAliasFragment" >
+        <argument
+            android:name="libpassId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="dev.maxsiomin.libpass.fragments.info.InfoFragment"
+        android:label="InfoFragment" />
+
+    <fragment
+        android:id="@+id/passesFragment"
+        android:name="dev.maxsiomin.libpass.fragments.passes.PassesFragment"
+        android:label="PassesFragment" >
+        <action
+            android:id="@+id/action_passesFragment_to_editFragment"
+            app:destination="@id/editFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="dev.maxsiomin.libpass.fragments.edit.EditFragment"
+        android:label="EditFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/exportFragment"
+        android:name="dev.maxsiomin.libpass.fragments.export.ExportFragment"
+        android:label="ExportFragment" />
+    <fragment
+        android:id="@+id/importFragment"
+        android:name="dev.maxsiomin.libpass.fragments.importfragment.ImportFragment"
+        android:label="ImportFragment" />
+
+</navigation>

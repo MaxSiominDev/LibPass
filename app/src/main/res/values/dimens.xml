@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="barcode_width">280dp</dimen>
+    <dimen name="barcode_height">64dp</dimen>
+    <dimen name="recycler_view_item_text_margin">16dp</dimen>
+    <dimen name="qr_size">300dp</dimen>
+</resources>

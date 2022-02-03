@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">LibPass</string>
+
+    <!-- MainActivity -->
+    <string name="last_version_checking_failed">Unable to check for updates</string>
+    <string name="update_app">Would you like to install latest app version?\nCurrent version: %1$s\nLatest version: &#160;&#160;%2$s</string>
+    <string name="no_thanks">No, thanks</string>
+    <string name="update">Update</string>
+
+    <!-- LibpassFragment -->
+    <string name="add_new_libpass">Add new libpass</string>
+
+    <!-- PassesFragment -->
+    <string name="want_to_delete">Are you sure you want to delete this libpass?</string>
+    <string name="delete">Delete</string>
+    <string name="no_libpasses">You don\'t have any libpasses yet</string>
+
+    <!-- InfoFragment -->
+    <string name="info_text">"Libpass" is a library pass (card) that allows you access to all state libraries of Moscow. Learn how to get it in settings</string>
+
+    <!-- EnterManuallyFragment -->
+    <string name="libpass_id">Libpass ID (digits below barcode)</string>
+    <string name="next">Next</string>
+    <string name="wrong_id">Wrong ID</string>
+
+    <!-- AddFragment -->
+    <string name="scan">Scan</string>
+    <string name="enter_details_manually">Enter details manually</string>
+    <string name="nothing_found">Nothing found</string>
+
+    <!-- ExportFragment -->
+    <string name="export">Export</string>
+    <string name="select_import_on_another_phone_and_scan_this_qr_code">Select import on another phone and scan this QR code</string>
+
+    <!-- ImportFragment -->
+    <string name="import_string">Import</string>
+
+    <!-- EditFragment -->
+    <string name="save">Save</string>
+    <string name="default_libpass">Default libpass</string>
+
+    <!-- ConfirmFragment -->
+    <string name="is_this_id_yours">Is this id yours?</string>
+    <string name="proceed">Proceed</string>
+    <string name="go_back">Go back</string>
+
+    <!-- EnterAliasFragment -->
+    <string name="libpass_alias">Libpass alias</string>
+    <string name="add_libpass">Add libpass</string>
+    <string name="wrong_alias">Alias cannot be blank or contain symbol "|"</string>
+
+    <!-- LibpassesFragment -->
+    <string name="my_libpasses">My libpasses</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="get_libpass">Get a libpass</string>
+    <string name="info">Info</string>
+    <string name="help_and_feedback">Help &amp; feedback</string>
+    <string name="share_this_app">Share this app</string>
+    <string name="more_apps">More apps</string>
+    <string name="mail_client_not_found">You don\'t have any mail clients installed on your device</string>
+    <string name="smth_went_wrong">Something went wrong</string>
+
+    <!-- Preference keys -->
+    <string name="key_app_version" translatable="false">app_version</string>
+    <string name="key_help_and_feedback" translatable="false">help_and_feedback</string>
+    <string name="key_share_this_app" translatable="false">share_this_app</string>
+    <string name="key_more_apps" translatable="false">more_apps</string>
+    <string name="key_get_libpass" translatable="false">get_libpass</string>
+
+</resources>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "441783101715",
+    "project_id": "lib-pass",
+    "storage_bucket": "lib-pass.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441783101715:android:9c0c128a90f43dbb0812e6",
+        "android_client_info": {
+          "package_name": "dev.maxsiomin.libpass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441783101715-0agfi5qa24bd7se5njp93u73komd5vjg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCeKPviSf0dhbwKftmqmfhaSEPagrv1zuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441783101715-0agfi5qa24bd7se5njp93u73komd5vjg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
