@@ -18,4 +18,3 @@ fun Activity.openInBrowser(url: String) {
         Toast.makeText(this, R.string.smth_went_wrong, Toast.LENGTH_LONG).show()
     }
 }
-

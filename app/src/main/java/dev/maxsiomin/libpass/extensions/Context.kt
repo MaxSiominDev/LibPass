@@ -6,4 +6,3 @@ import dev.maxsiomin.libpass.util.SharedPrefs
 
 fun Context.getDefaultSharedPrefs(): SharedPrefs =
     PreferenceManager.getDefaultSharedPreferences(this)
-
