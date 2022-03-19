@@ -32,8 +32,13 @@ class EditViewModel @Inject constructor(uiActions: UiActions) : BaseViewModel(ui
 
     fun resaveLibpass(id: Int, value: String, alias: String) {
         runOnIoCoroutine {
-            val libpass = LibraryPass(id, value, alias)
+            val libpass = LibraryPass(0, value, alias)
+            dao.deleteLibpass(id)
             dao.insertPass(libpass)
+
+            if (isDefaultLibpass(id)) {
+                sharedPrefs.edit().putInt(DEFAULT_LIBPASS_ID, 0).apply()
+            }
         }
     }
 }
