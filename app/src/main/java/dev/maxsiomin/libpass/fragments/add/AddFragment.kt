@@ -1,16 +1,13 @@
 package dev.maxsiomin.libpass.fragments.add
 
-import android.app.Activity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
-import androidx.activity.result.ActivityResult
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.github.dhaval2404.imagepicker.ImagePicker
+import com.journeyapps.barcodescanner.ScanContract
+import com.journeyapps.barcodescanner.ScanOptions
 import dagger.hilt.android.AndroidEntryPoint
 import dev.maxsiomin.libpass.R
+import dev.maxsiomin.libpass.activity.CaptureActivityPortrait
 import dev.maxsiomin.libpass.databinding.FragmentAddBinding
 import dev.maxsiomin.libpass.fragments.base.BaseFragment
 
@@ -25,8 +22,6 @@ class AddFragment : BaseFragment(R.layout.fragment_add) {
 
     override val mRoot get() = binding.root
 
-    private val viewModel by viewModels<AddViewModel>()
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -34,7 +29,7 @@ class AddFragment : BaseFragment(R.layout.fragment_add) {
 
         binding.apply {
             buttonScan.setOnClickListener {
-                takeBarcodePhoto()
+                scan()
             }
 
             textViewManually.setOnClickListener {
@@ -43,28 +38,21 @@ class AddFragment : BaseFragment(R.layout.fragment_add) {
         }
     }
 
-    private fun takeBarcodePhoto() {
-        ImagePicker.with(this)
-            .cameraOnly()
-            .createIntent { intent ->
-                imageResultListener.launch(intent)
-            }
+    private fun scan() {
+        val options = ScanOptions()
+            .setBeepEnabled(false)
+            .setOrientationLocked(true)
+            .setCaptureActivity(CaptureActivityPortrait::class.java)
+
+        barcodeLauncher.launch(options)
     }
 
-    private val imageResultListener =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-            val resultCode = result.resultCode
-            val data = result.data
+    private val barcodeLauncher = registerForActivityResult(ScanContract()) { result ->
+        onBarcodeLoaded(result.contents)
+    }
 
-            if (resultCode == Activity.RESULT_OK) {
-                // Image Uri will not be null for RESULT_OK
-                val imageUri = data?.data!!
-                viewModel.tryToRecogniseBarcode(requireContext(), imageUri) {
-                    val direction = AddFragmentDirections.actionAddFragmentToConfirmFragment(it)
-                    findNavController().navigate(direction)
-                }
-            } else if (resultCode == ImagePicker.RESULT_ERROR) {
-                viewModel.toast(ImagePicker.getError(data), Toast.LENGTH_LONG)
-            }
-        }
+    private fun onBarcodeLoaded(content: String) {
+        val direction = AddFragmentDirections.actionAddFragmentToConfirmFragment(content)
+        findNavController().navigate(direction)
+    }
 }

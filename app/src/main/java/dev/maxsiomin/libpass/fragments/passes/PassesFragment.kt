@@ -90,7 +90,7 @@ class PassesFragment : BaseFragment(R.layout.fragment_passes) {
 
             val dialog = AlertDialog.Builder(requireContext())
                 .setMessage(R.string.want_to_delete)
-                .setNegativeButton(R.string.action_cancel) { _, _ ->
+                .setNegativeButton(R.string.cancel) { _, _ ->
                     dismiss()
                 }
                 .setPositiveButton(R.string.delete) { _, _ ->

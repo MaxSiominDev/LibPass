@@ -51,6 +51,7 @@
 
     <!-- LibpassesFragment -->
     <string name="my_libpasses">My libpasses</string>
+    <string name="cancel">Cancel</string>
 
     <!-- Settings -->
     <string name="settings">Settings</string>
